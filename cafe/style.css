@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #fff;
+    --accent-color: #f00;
+    --bg-color: #7a650e; 
+    --text-color: black;
+    --card-color: #5cacb7;
+    --muted-color: #756189;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+header {
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px; 
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+
+}
