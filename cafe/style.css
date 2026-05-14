@@ -10,15 +10,29 @@
     --bg-color: #7a650e;
     --text-color: white;
     --card-color: #5cacb7;
-    --muted-color: #756189;
+    --muted-color: navy;
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--card-color);
 }
 
 h1, h2, h3 {
-    color: var(--text-color);
+    color: var(--muted-color);
+}
+
+button {
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
 }
 
 header {
@@ -61,4 +75,12 @@ section h2 {
 #hero h2 {
     color: var(--card-color);
     border-bottom: none;
+}
+
+.recommend {
+    border: 2px dashed var(--bg-color);
+    background-color: var(--main-color);
+    margin: 40px 0;
+    padding: 24px;
+    text-align: center;
 }
