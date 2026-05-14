@@ -6,15 +6,19 @@
 
 :root {
     --main-color: #fff;
-    --accent-color: #f00;
-    --bg-color: #7a650e; 
-    --text-color: black;
+    --accent-color: gold;
+    --bg-color: #7a650e;
+    --text-color: white;
     --card-color: #5cacb7;
     --muted-color: #756189;
 }
 
 body {
     background-color: var(--bg-color);
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
 }
 
 header {
@@ -31,12 +35,30 @@ nav {
 
 }
 
+section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding:  60px 24px;
+}
+
+section h2 {
+    font-size: 30px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
 #hero {
     background-image:
     linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), /* 黒い半透明（文字を読みやすく） */
     url("https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1600&h=900&fit=crop&auto=format&q=80");
     padding: 140px 24px;
     background-size: cover;
+    background-position: center;
     color: var(--card-color);
     text-align: center;
+    max-width: none;
+}
+
+#hero h2 {
+    color: var(--card-color);
+    border-bottom: none;
 }
