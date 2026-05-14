@@ -77,10 +77,35 @@ section h2 {
     border-bottom: none;
 }
 
+/* Recommend */
 .recommend {
     border: 2px dashed var(--bg-color);
     background-color: var(--main-color);
     margin: 40px 0;
     padding: 24px;
     text-align: center;
+}
+
+/* Menu */
+.menu-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    flex: 1;
+    background-color: var(--text-color);
+    border-radius: 8px;
+    min-width: 240px;
+    padding: 24px;
+    overflow: hidden;
+}
+
+.menu-item img{
+    height: 180px;
+    display: block;
+    width: calc(100% + 48px);
+    margin: -24px -24px 16px;
+    object-fit: cover;
 }
