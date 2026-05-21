@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FORGE — Coffee & Craft</title>
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header id="header">
+    <nav class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-main">FORGE</span>
+        <span class="logo-sub">COFFEE & CRAFT</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#access">Access</a></li>
+      </ul>
+      <a href="#menu" class="nav-cta">ORDER NOW</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#access">Access</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-content">
+      <p class="hero-tag">EST. 2018 · OSAKA, JAPAN</p>
+      <h1 class="hero-title">
+        <span class="line" data-text="BREWED">BREWED</span>
+        <span class="line italic" data-text="for">for</span>
+        <span class="line" data-text="THE BOLD">THE BOLD</span>
+      </h1>
+      <p class="hero-desc">Single-origin beans. No-nonsense brews.<br>A refuge for those who take their coffee seriously.</p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn-primary">EXPLORE MENU</a>
+        <a href="#about" class="btn-ghost">OUR STORY →</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-badge">
+      <svg viewBox="0 0 120 120" class="badge-ring"><circle cx="60" cy="60" r="54" fill="none" stroke="var(--gold)" stroke-width="1"/><text><textPath href="#circlePath" startOffset="0%">SPECIALTY COFFEE · HAND CRAFTED · OSAKA · </textPath></text><defs><path id="circlePath" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"/></defs></svg>
+      <span class="badge-center">☕</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-images">
+        <div class="about-img img-main" data-parallax="0.1">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Coffee being poured" />
+        </div>
+        <div class="about-img img-secondary" data-parallax="0.2">
+          <img src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?w=400&q=80" alt="Barista at work" />
+        </div>
+        <div class="about-stat">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Origins Sourced</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">// WHO WE ARE</p>
+        <h2 class="section-title">Built on<br><em>Obsession</em></h2>
+        <p class="about-body">FORGE was born from a single conviction: great coffee demands great discipline. We source only the top 1% of specialty beans from Ethiopia, Colombia, and beyond — then roast every batch in-house with military precision.</p>
+        <p class="about-body">This isn't a café for the timid. No flavored syrups. No shortcuts. Just clean, honest coffee for people who know the difference.</p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <span class="pillar-num">01</span>
+            <span class="pillar-label">Direct Trade</span>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">02</span>
+            <span class="pillar-label">In-House Roast</span>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">03</span>
+            <span class="pillar-label">Zero Compromise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="menu-header">
+      <p class="section-tag">// WHAT WE SERVE</p>
+      <h2 class="section-title">The Menu</h2>
+      <div class="menu-tabs">
+        <button class="tab active" data-tab="espresso">Espresso</button>
+        <button class="tab" data-tab="brew">Brew Bar</button>
+        <button class="tab" data-tab="food">Bites</button>
+      </div>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section id="access">
+    <div class="access-container">
+      <div class="access-info">
+        <p class="section-tag">// FIND US</p>
+        <h2 class="section-title">Access</h2>
+        <div class="access-details">
+          <div class="detail-block">
+            <span class="detail-icon">📍</span>
+            <div>
+              <strong>Location</strong>
+              <p>2-4-18 Shinsaibashisuji<br>Chuo-ku, Osaka 542-0085</p>
+            </div>
+          </div>
+          <div class="detail-block">
+            <span class="detail-icon">⏱</span>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon–Fri · 07:00 – 21:00<br>Sat–Sun · 08:00 – 22:00</p>
+            </div>
+          </div>
+          <div class="detail-block">
+            <span class="detail-icon">🚇</span>
+            <div>
+              <strong>Transit</strong>
+              <p>Shinsaibashi Station<br>Exit 6 · 3 min walk</p>
+            </div>
+          </div>
+          <div class="detail-block">
+            <span class="detail-icon">📞</span>
+            <div>
+              <strong>Contact</strong>
+              <p>+81 6-1234-5678<br>hello@forgecoffee.jp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="access-map">
+        <div class="map-placeholder">
+          <div class="map-inner">
+            <div class="map-pin">📍</div>
+            <p>FORGE COFFEE</p>
+            <span>Shinsaibashi, Osaka</span>
+          </div>
+          <div class="map-grid-lines"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-main">FORGE</span>
+        <span class="logo-sub">COFFEE & CRAFT</span>
+        <p class="footer-tagline">No shortcuts. No excuses. Just coffee.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong>Navigate</strong>
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#access">Access</a>
+        </div>
+        <div class="footer-col">
+          <strong>Connect</strong>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter / X</a>
+          <a href="#">LINE</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 FORGE Coffee & Craft. All rights reserved.</span>
+      <span class="footer-craft">Crafted with obsession · Osaka, JP</span>
+    </div>
+  </footer>
+
+  <script src="cafescript.js"></script>
+</body>
+</html>
