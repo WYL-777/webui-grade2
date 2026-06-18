@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Matcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-card">
+        <div class="gradient-header"></div>
+        <h1 class="app-title">Which celebrity do you look like right now?</h1>
+
+        <button type="button" class="btn-start" onclick="init()">Scan My Face</button>
+
+        <div class="celebrity-gallery">
+            <div class="celeb-item">
+                <div class="celeb-thumb"><img src="image/Lee Min Ho.png" id="ref-leeminho" alt="Lee Min Ho"></div>
+                <p>LEE MIN HO</p>
+            </div>
+            <div class="celeb-item">
+                <div class="celeb-thumb"><img src="image/Brad PItt 1.png" id="ref-bradpitt" alt="Brad Pitt"></div>
+                <p>BRAD PITT</p>
+            </div>
+            <div class="celeb-item">
+                <div class="celeb-thumb"><img src="image/Leo.png" id="ref-leonardo" alt="Leonardo DiCaprio"></div>
+                <p>LEONARDO DICAPRIO</p>
+            </div>
+        </div>
+
+        <div class="webcam-wrapper">
+            <div id="webcam-container">
+                </div>
+        </div>
+
+        <div class="results-table">
+            <div class="table-header">
+                <div>Celebrity Match</div>
+                <div>Match Info</div>
+                <div>Confidence Score</div>
+            </div>
+            
+            <div class="table-row" id="row-leeminho">
+                <div class="celeb-name">LEE MIN HO</div>
+                <div class="match-images">
+                    <img src="https://placehold.co/40x40/222/fff?text=LMH" class="mini-img">
+                    <canvas class="mini-snapshot"></canvas>
+                </div>
+                <div class="score" id="score-leeminho">0.00</div>
+            </div>
+
+            <div class="table-row" id="row-bradpitt">
+                <div class="celeb-name">BRAD PITT</div>
+                <div class="match-images">
+                    <img src="https://placehold.co/40x40/222/fff?text=BP" class="mini-img">
+                    <canvas class="mini-snapshot"></canvas>
+                </div>
+                <div class="score" id="score-bradpitt">0.00</div>
+            </div>
+
+            <div class="table-row" id="row-leonardo">
+                <div class="celeb-name">LEONARDO DICAPRIO</div>
+                <div class="match-images">
+                    <img src="https://placehold.co/40x40/222/fff?text=LDC" class="mini-img">
+                    <canvas class="mini-snapshot"></canvas>
+                </div>
+                <div class="score" id="score-leonardo">0.00</div>
+            </div>
+        </div>
+
+        <div id="top-match-alert">Click 'Scan My Face' to begin</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

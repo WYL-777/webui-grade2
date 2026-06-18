@@ -1,0 +1,174 @@
+body {
+    background-color: #0d0b21;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Card Container */
+.app-card {
+    background-color: #17152e;
+    border: 1px solid #2b2754;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 520px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Header Gradient Bar */
+.gradient-header {
+    height: 45px;
+    width: 70%;
+    margin: 0 auto 15px auto;
+    background: linear-gradient(90deg, #ff7b7b, #a25eff, #6875ff);
+    border-radius: 4px;
+}
+
+.app-title {
+    font-size: 1.1rem;
+    color: #a5a1e2;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+/* Activation Action Button */
+.btn-start {
+    background: linear-gradient(135deg, #7467ef, #8b8dfa);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    margin-bottom: 25px;
+}
+
+.btn-start:hover {
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+/* Reference Images Grid */
+.celebrity-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.celeb-item p {
+    font-size: 0.75rem;
+    color: #d1cffd;
+    margin: 8px 0 0 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.celeb-thumb {
+    background-color: #0f0d24;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px rgba(139, 141, 250, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.celeb-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Central Webcam Styling */
+.webcam-wrapper {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 25px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(139, 141, 250, 0.3);
+    background-color: #0f0d24;
+}
+
+#webcam-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+/* Results Data Table Styling */
+.results-table {
+    border: 1px solid #2b2754;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #121026;
+    margin-bottom: 20px;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    background-color: #1b183a;
+    padding: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 1px solid #2b2754;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    padding: 12px 10px;
+    align-items: center;
+    border-bottom: 1px solid #1f1b40;
+    font-size: 0.8rem;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.celeb-name {
+    text-align: left;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.match-images {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.mini-img, .mini-snapshot {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-color: #2b2754;
+}
+
+.score {
+    font-weight: 500;
+    color: #e2e1ff;
+}
+
+/* Banner text below table */
+#top-match-alert {
+    font-size: 0.9rem;
+    color: #928eff;
+    margin-top: 15px;
+    font-weight: 500;
+}
