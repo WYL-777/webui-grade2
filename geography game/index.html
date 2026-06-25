@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoQuiz Trivia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>🌍 GeoQuiz Trivia</h1>
+        <div id="score-board">Score: <span id="score">0</span></div>
+        
+        <div id="question-box">
+            <p>Which country does this flag belong to?</p>
+            <div id="loading-text">Loading country data...</div>
+            <img id="flag-image" src="" alt="Flag" style="display: none;">
+        </div>
+
+        <div id="options-container">
+            </div>
+        
+        <button id="next-btn" class="hidden">Next Question ➡️</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
