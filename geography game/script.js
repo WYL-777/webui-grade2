@@ -6,28 +6,53 @@ const scoreEl = document.getElementById('score');
 
 let score = 0;
 let correctCountry = null;
+let countriesData = []; // Starts empty, will be filled by the API
 
-// Built-in country data (No internet required!)
-const countriesData = [
-    { name: { common: "Japan" }, flags: { png: "https://flagcdn.com/w320/jp.png" } },
-    { name: { common: "Canada" }, flags: { png: "https://flagcdn.com/w320/ca.png" } },
-    { name: { common: "Brazil" }, flags: { png: "https://flagcdn.com/w320/br.png" } },
-    { name: { common: "Australia" }, flags: { png: "https://flagcdn.com/w320/au.png" } },
-    { name: { common: "France" }, flags: { png: "https://flagcdn.com/w320/fr.png" } },
-    { name: { common: "United Kingdom" }, flags: { png: "https://flagcdn.com/w320/gb.png" } },
-    { name: { common: "South Africa" }, flags: { png: "https://flagcdn.com/w320/za.png" } },
-    { name: { common: "India" }, flags: { png: "https://flagcdn.com/w320/in.png" } },
-    { name: { common: "Mexico" }, flags: { png: "https://flagcdn.com/w320/mx.png" } },
-    { name: { common: "Italy" }, flags: { png: "https://flagcdn.com/w320/it.png" } },
-    { name: { common: "Egypt" }, flags: { png: "https://flagcdn.com/w320/eg.png" } },
-    { name: { common: "Argentina" }, flags: { png: "https://flagcdn.com/w320/ar.png" } }
-];
+// FETCH DATA FROM A STABLE, FREE PUBLIC API
+async function fetchCountries() {
+    try {
+        // Using a highly reliable public dataset mirror (No API key required)
+        const response = await fetch('https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-abbreviation.json');
+        
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json();
+        
+        // BUG FIX: Ensure we map data to use 2-letter lowercase codes for flagcdn.com
+        countriesData = data.map(country => ({
+            name: { common: country.country },
+            flags: { png: `https://flagcdn.com/w320/${country.abbreviation.toLowerCase()}.png` }
+        }));
+        
+        // Hide loading text, reveal the flag, and start the game loop
+        if (loadingText) loadingText.style.display = 'none';
+        flagImg.style.display = 'block';
+        generateQuestion();
+    } catch (error) {
+        console.error('Failed to fetch country data:', error);
+        if (loadingText) {
+            loadingText.innerHTML = '⚠️ API Error. Loading offline backup data instead...';
+            loadingText.style.color = '#dc3545';
+        }
+        
+        // Fallback mechanism if the internet/API fails completely
+        useFallbackData();
+    }
+}
 
-function startGame() {
-    // Hide loading text and show flag elements
-    if (loadingText) loadingText.style.display = 'none';
-    flagImg.style.display = 'block';
-    generateQuestion();
+// Fallback function so the game NEVER completely breaks for a user
+function useFallbackData() {
+    countriesData = [
+        { name: { common: "Japan" }, flags: { png: "https://flagcdn.com/w320/jp.png" } },
+        { name: { common: "Canada" }, flags: { png: "https://flagcdn.com/w320/ca.png" } },
+        { name: { common: "Brazil" }, flags: { png: "https://flagcdn.com/w320/br.png" } },
+        { name: { common: "Australia" }, flags: { png: "https://flagcdn.com/w320/au.png" } }
+    ];
+    setTimeout(() => {
+        if (loadingText) loadingText.style.display = 'none';
+        flagImg.style.display = 'block';
+        generateQuestion();
+    }, 1500);
 }
 
 // Generate a random question
@@ -35,7 +60,10 @@ function generateQuestion() {
     nextBtn.classList.add('hidden');
     optionsContainer.innerHTML = '';
 
-    // Pick 4 random distinct countries from our local list
+    // Guard clause to make sure data exists
+    if (countriesData.length === 0) return;
+
+    // Pick 4 random distinct countries from our fresh API list
     const shuffled = [...countriesData].sort(() => 0.5 - Math.random());
     const choices = shuffled.slice(0, 4);
 
@@ -77,5 +105,5 @@ function checkAnswer(selectedButton, selectedCountry) {
 
 nextBtn.addEventListener('click', generateQuestion);
 
-// Kick off the game directly
-startGame();
+// Call the API function to kick things off!
+fetchCountries();
